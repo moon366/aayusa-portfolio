@@ -59,7 +59,7 @@ const About = () => {
               <span className="font-bold text-gray-900">
                 Frontend Developer
               </span>{" "}
-              and a BCA 3rd semester student at{" "}
+              and a BCA student at{" "}
               <span className="font-bold text-gray-900">
                 Butwal Kalika Campus .
               </span>{" "}
