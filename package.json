@@ -11,6 +11,7 @@
     "preview": "npm run build && wrangler dev"
   },
   "dependencies": {
+    "@iconify/react": "^6.0.2",
     "@tailwindcss/vite": "^4.2.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
