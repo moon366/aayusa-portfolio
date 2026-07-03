@@ -10,16 +10,13 @@ const categories = [
       { name: "NextJS", icon: "devicon:nextjs" },
       { name: "Javascript", icon: "devicon:javascript" },
       { name: "TailwindCSS", icon: "devicon:tailwindcss" },
-      { name: "Flutter", icon: "devicon:flutter" },
-      { name: "ReactNative", icon: "devicon:react" },
+      { name: "Redux", icon: "devicon:redux" },
     ],
   },
   {
     title: "Backend",
     skills: [
       { name: "NodeJS", icon: "devicon:nodejs" },
-      { name: "Spring", icon: "devicon:spring" },
-      { name: "Java", icon: "devicon:java" },
       { name: "Express", icon: "devicon:express" },
       { name: "PHP", icon: "devicon:php" },
     ],
@@ -29,7 +26,6 @@ const categories = [
     skills: [
       { name: "MongoDB", icon: "devicon:mongodb" },
       { name: "MySQL", icon: "devicon:mysql" },
-      { name: "PostgreSQL", icon: "devicon:postgresql" },
       { name: "SQL", icon: "mdi:database" },
     ],
   },
