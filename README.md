@@ -1,6 +1,6 @@
 <div align="center">
   <h1>🌻 Aayusa Nyaupane — Portfolio</h1>
-  <p><strong>FullStack Developer</strong> · React · TailwindCSS · Framer Motion</p>
+  <p><strong>FullStack Developer</strong></p>
   <p>
     <a href="https://aayusaneupane.com.np">Live Demo</a>
   </p>
