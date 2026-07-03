@@ -77,7 +77,7 @@ const NavbarHero = () => {
                 className="space-y-3"
               >
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-100">
-                  Frontend Developer
+                  FullStack Developer
                 </h2>
                 <p className="text-gray-300 text-base md:text-lg max-w-2xl border-l-4 border-cyan-400 pl-5">
                   I just pull things off the internet and put it into my code.

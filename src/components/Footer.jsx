@@ -60,7 +60,7 @@ const Footer = () => {
               </motion.span>
             </h3>
             <p className="text-sm text-gray-600">
-              Frontend Developer &amp; Student
+              FullStack Developer &amp; Student
             </p>
             <p className="text-xs text-gray-500">
               Building interactive web experiences
@@ -121,7 +121,7 @@ const Footer = () => {
           className="flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 space-y-4 sm:space-y-0"
         >
           <p className="flex items-center gap-1.5">
-            🌻 © {currentYear} Aayusa Neupane — Frontend Developer. All rights reserved.
+            🌻 © {currentYear} Aayusa Neupane — FullStack Developer. All rights reserved.
           </p>
 
           <div className="flex gap-6">

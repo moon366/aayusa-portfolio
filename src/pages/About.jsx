@@ -57,7 +57,7 @@ const About = () => {
               <span className="font-bold text-gray-900">Aayusa Nyaupane</span>,
               a passionate{" "}
               <span className="font-bold text-gray-900">
-                Frontend Developer
+                FullStack Developer
               </span>{" "}
               and a BCA student at{" "}
               <span className="font-bold text-gray-900">

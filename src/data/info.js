@@ -16,10 +16,10 @@ import {
 
 export const personalInfo = {
   name: "Aayusa Nyaupane",
-  role: "Frontend Developer",
+  role: "FullStack Developer",
   tagline:
     "Transforming ideas into interactive, responsive, and visually appealing web applications.",
-  bio: "Hi, I'm Aayusa Nyaupane, a passionate Frontend Developer currently pursuing my BCA (Bachelor in Computer Applications) at Butwal Kalika Campus, with hands-on experience with HTML, CSS, JavaScript, and React.js, and I enjoy learning new technologies that help me create better user experiences. Along with technical skills, I am confident in communication and public speaking, which allows me to clearly share ideas, collaborate effectively with teams, and engage with clients or audiences. I am driven by curiosity and creativity, always aiming to grow as a developer and contribute to projects that make an impact.",
+  bio: "Hi, I'm Aayusa Nyaupane, a passionate FullStack Developer currently pursuing my BCA (Bachelor in Computer Applications) at Butwal Kalika Campus, with hands-on experience with HTML, CSS, JavaScript, and React.js, and I enjoy learning new technologies that help me create better user experiences. Along with technical skills, I am confident in communication and public speaking, which allows me to clearly share ideas, collaborate effectively with teams, and engage with clients or audiences. I am driven by curiosity and creativity, always aiming to grow as a developer and contribute to projects that make an impact.",
   email: "aayusa@example.com",
   address: "Nepal · Rupandehi, Butwal",
   resumeLink: "#",

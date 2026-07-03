@@ -1,8 +1,8 @@
 <div align="center">
   <h1>🌻 Aayusa Nyaupane — Portfolio</h1>
-  <p><strong>Frontend Developer</strong> · React · TailwindCSS · Framer Motion</p>
+  <p><strong>FullStack Developer</strong> · React · TailwindCSS · Framer Motion</p>
   <p>
-    <a href="https://aayusa-portfolio.vercel.app">Live Demo</a>
+    <a href="https://aayusaneupane.com.np">Live Demo</a>
   </p>
 </div>
 

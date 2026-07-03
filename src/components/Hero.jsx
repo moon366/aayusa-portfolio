@@ -95,7 +95,7 @@ const Hero = () => {
           <motion.div variants={fadeUp} className="mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-xs tracking-[0.25em] uppercase font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              Frontend Developer
+              FullStack Developer
             </span>
           </motion.div>
 
