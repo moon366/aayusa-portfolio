@@ -7,6 +7,11 @@ import {
   Mic2,
   MessageSquare,
   GraduationCap,
+  Wind,
+  Server,
+  Database,
+  GitBranch,
+  Send,
 } from "lucide-react";
 
 export const personalInfo = {
@@ -33,6 +38,13 @@ export const skills = [
   { name: "MongoDB", icon: Globe, color: "text-green-500" },
   { name: "MySQL", icon: Globe, color: "text-blue-600" },
   { name: "PostgreSQL", icon: Globe, color: "text-blue-700" },
+  { name: "TailwindCSS", icon: Wind, color: "text-cyan-400" },
+  { name: "Express", icon: Server, color: "text-gray-600" },
+  { name: "SQL", icon: Database, color: "text-blue-500" },
+  { name: "PHP", icon: Code2, color: "text-purple-600" },
+  { name: "Git", icon: GitBranch, color: "text-orange-500" },
+  { name: "Postman", icon: Send, color: "text-orange-500" },
+  { name: "VSCode", icon: Code2, color: "text-blue-500" },
 ];
 
 export const education = [
