@@ -25,7 +25,7 @@ const Education = () => {
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-black tracking-tighter text-gray-900 uppercase">
-            [ Skills ]
+            [ Education ]
           </h2>
         </div>
 

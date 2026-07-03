@@ -48,11 +48,19 @@ const Footer = () => {
             viewport={{ once: true }}
             className="space-y-2"
           >
-            <h3 className="text-lg font-bold text-gray-900">
+            <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
               Aayusa Neupane
+              <motion.span
+                animate={{ rotate: [0, 15, -10, 15, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 2 }}
+                className="inline-block origin-bottom text-xl select-none"
+                title="🌻"
+              >
+                🌻
+              </motion.span>
             </h3>
             <p className="text-sm text-gray-600">
-              Frontend Developer & Student
+              Frontend Developer &amp; Student
             </p>
             <p className="text-xs text-gray-500">
               Building interactive web experiences
@@ -112,8 +120,8 @@ const Footer = () => {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 space-y-4 sm:space-y-0"
         >
-          <p>
-            © {currentYear} Aayusa Neupane — Frontend Developer. All rights reserved.
+          <p className="flex items-center gap-1.5">
+            🌻 © {currentYear} Aayusa Neupane — Frontend Developer. All rights reserved.
           </p>
 
           <div className="flex gap-6">

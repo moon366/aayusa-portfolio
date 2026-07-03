@@ -12,62 +12,67 @@ import Footer from "../components/Footer";
 function Home() {
   const [activeSection, setActiveSection] = useState("hero");
   const isScrollingProgrammatically = useRef(false);
+  const scrollLockTimer = useRef(null);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
-        // Don't update active section during programmatic scroll
         if (isScrollingProgrammatically.current) return;
-        
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-            // Only update URL hash if not at hero section or during normal scroll
-            if (entry.target.id !== "hero") {
-              window.location.hash = entry.target.id;
-            } else {
-              // Remove hash when at hero section
-              window.history.replaceState(null, "", window.location.pathname + window.location.search);
-            }
-          }
-        });
+
+        // Pick the entry with the largest intersection ratio if multiple fire
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible.length === 0) return;
+
+        const id = visible[0].target.id;
+        setActiveSection(id);
+
+        // Use pushState — never assignment — so no native jump
+        if (id === "hero") {
+          history.replaceState(null, "", window.location.pathname);
+        } else {
+          history.replaceState(null, "", `#${id}`);
+        }
       },
-      { rootMargin: "-50% 0px -50% 0px", threshold: 0 },
+      {
+        // Trigger when section crosses the middle band of the viewport
+        rootMargin: "-40% 0px -40% 0px",
+        threshold: 0,
+      }
     );
-    
-    sections.forEach((section) => observer.observe(section));
-    
-    // Add event listener to detect programmatic scroll end
-    const handleScrollEnd = () => {
-      setTimeout(() => {
-        isScrollingProgrammatically.current = false;
-      }, 100);
-    };
-    
-    window.addEventListener("scrollend", handleScrollEnd);
-    
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-      window.removeEventListener("scrollend", handleScrollEnd);
-    };
+
+    sections.forEach((s) => observer.observe(s));
+    return () => sections.forEach((s) => observer.unobserve(s));
   }, []);
 
-  // Expose a method to set programmatic scrolling flag
+  // Expose programmatic scroll control to Navbar
   useEffect(() => {
-    window.setProgrammaticScroll = (value) => {
+    window.setProgrammaticScroll = (value, duration = 1200) => {
       isScrollingProgrammatically.current = value;
+      if (scrollLockTimer.current) clearTimeout(scrollLockTimer.current);
+      if (value) {
+        // Auto-release after estimated scroll duration as a safety net
+        scrollLockTimer.current = setTimeout(() => {
+          isScrollingProgrammatically.current = false;
+        }, duration);
+      }
     };
-    
     return () => {
       delete window.setProgrammaticScroll;
+      if (scrollLockTimer.current) clearTimeout(scrollLockTimer.current);
     };
   }, []);
 
   return (
     <>
-      <Navbar activeSection={activeSection} />
+      <Navbar
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+      />
       <main className="overflow-hidden">
         <Hero />
         <About />
