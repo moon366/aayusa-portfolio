@@ -1,27 +1,41 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
+import {
+  Code2,
+  Terminal,
+  Layout,
+  Smartphone,
+  Globe,
+  Wind,
+  Server,
+  Database,
+  GitBranch,
+  Send,
+} from "lucide-react";
 
-const skillsData = [
-  { name: "ReactJS", symbol: "⚛" },
-  { name: "NextJS", symbol: "N" },
-  { name: "NodeJS", symbol: "◉" },
-  { name: "Spring", symbol: "🌱" },
-  { name: "Java", symbol: "☕" },
-  { name: "Javascript", symbol: "JS" },
-  { name: "Flutter", symbol: "🦋" },
-  { name: "ReactNative", symbol: "📱" },
-  { name: "Github", symbol: "🐙" },
-  { name: "MongoDB", symbol: "🍃" },
-  { name: "MySQL", symbol: "🐬" },
-  { name: "PostgreSQL", symbol: "🐘" },
-  { name: "TailwindCSS", symbol: "🌊" },
-  { name: "Express", symbol: "⚡" },
-  { name: "SQL", symbol: "🗄️" },
-  { name: "PHP", symbol: "🐘" },
-  { name: "Git", symbol: "🔀" },
-  { name: "Postman", symbol: "📮" },
-  { name: "VSCode", symbol: "💻" },
-];
+const iconMap = {
+  ReactJS: Code2,
+  NextJS: Terminal,
+  NodeJS: Terminal,
+  Spring: Layout,
+  Java: Code2,
+  Javascript: Terminal,
+  Flutter: Smartphone,
+  ReactNative: Smartphone,
+  Github: Terminal,
+  MongoDB: Globe,
+  MySQL: Globe,
+  PostgreSQL: Globe,
+  TailwindCSS: Wind,
+  Express: Server,
+  SQL: Database,
+  PHP: Code2,
+  Git: GitBranch,
+  Postman: Send,
+  VSCode: Code2,
+};
+
+const skillsData = Object.keys(iconMap);
 
 const Skills = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -106,7 +120,7 @@ const Skills = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {skillsData.map((skill, index) => (
               <motion.div
-                key={skill.name}
+                key={skill}
                 ref={(el) => (cardRefs.current[index] = el)}
                 onMouseEnter={() => setActiveIndex(index)}
                 onMouseLeave={() => setActiveIndex(null)}
@@ -117,10 +131,10 @@ const Skills = () => {
                 className="relative z-20 bg-white border border-gray-200 rounded-2xl p-10 flex flex-col items-center justify-center cursor-pointer transition-all duration-300"
               >
                 <span className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
-                  {skill.symbol}
+                  {React.createElement(iconMap[skill], { size: 48, strokeWidth: 1.5 })}
                 </span>
                 <p className="font-bold text-gray-800 tracking-tight">
-                  {skill.name}
+                  {skill}
                 </p>
               </motion.div>
             ))}
