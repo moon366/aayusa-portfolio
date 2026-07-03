@@ -46,7 +46,7 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-5xl font-black tracking-tighter text-gray-900">
-            Skills
+            [ Skills ]
           </h2>
         </div>
 
