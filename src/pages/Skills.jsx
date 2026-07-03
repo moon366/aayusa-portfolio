@@ -2,10 +2,25 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 
 const skillsData = [
-  { name: "HTML", symbol: "H" },
-  { name: "CSS", symbol: "C" },
-  { name: "JavaScript", symbol: "JS" },
   { name: "ReactJS", symbol: "⚛" },
+  { name: "NextJS", symbol: "N" },
+  { name: "NodeJS", symbol: "◉" },
+  { name: "Spring", symbol: "🌱" },
+  { name: "Java", symbol: "☕" },
+  { name: "Javascript", symbol: "JS" },
+  { name: "Flutter", symbol: "🦋" },
+  { name: "ReactNative", symbol: "📱" },
+  { name: "Github", symbol: "🐙" },
+  { name: "MongoDB", symbol: "🍃" },
+  { name: "MySQL", symbol: "🐬" },
+  { name: "PostgreSQL", symbol: "🐘" },
+  { name: "TailwindCSS", symbol: "🌊" },
+  { name: "Express", symbol: "⚡" },
+  { name: "SQL", symbol: "🗄️" },
+  { name: "PHP", symbol: "🐘" },
+  { name: "Git", symbol: "🔀" },
+  { name: "Postman", symbol: "📮" },
+  { name: "VSCode", symbol: "💻" },
 ];
 
 const Skills = () => {
