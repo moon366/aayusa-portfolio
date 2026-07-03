@@ -1,41 +1,12 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Terminal,
-  Layout,
-  Smartphone,
-  Globe,
-  Wind,
-  Server,
-  Database,
-  GitBranch,
-  Send,
-} from "lucide-react";
 
-const iconMap = {
-  ReactJS: Code2,
-  NextJS: Terminal,
-  NodeJS: Terminal,
-  Spring: Layout,
-  Java: Code2,
-  Javascript: Terminal,
-  Flutter: Smartphone,
-  ReactNative: Smartphone,
-  Github: Terminal,
-  MongoDB: Globe,
-  MySQL: Globe,
-  PostgreSQL: Globe,
-  TailwindCSS: Wind,
-  Express: Server,
-  SQL: Database,
-  PHP: Code2,
-  Git: GitBranch,
-  Postman: Send,
-  VSCode: Code2,
-};
-
-const skillsData = Object.keys(iconMap);
+const skillsData = [
+  "ReactJS", "NextJS", "NodeJS", "Spring", "Java",
+  "Javascript", "Flutter", "ReactNative", "Github",
+  "MongoDB", "MySQL", "PostgreSQL", "TailwindCSS",
+  "Express", "SQL", "PHP", "Git", "Postman", "VSCode",
+];
 
 const Skills = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -128,12 +99,9 @@ const Skills = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative z-20 bg-white border border-gray-200 rounded-2xl p-10 flex flex-col items-center justify-center cursor-pointer transition-all duration-300"
+                className="relative z-20 bg-white border border-gray-200 rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer transition-all duration-300"
               >
-                <span className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110">
-                  {React.createElement(iconMap[skill], { size: 48, strokeWidth: 1.5 })}
-                </span>
-                <p className="font-bold text-gray-800 tracking-tight">
+                <p className="font-bold text-gray-800 tracking-tight text-lg">
                   {skill}
                 </p>
               </motion.div>
