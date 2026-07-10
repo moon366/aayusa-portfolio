@@ -278,7 +278,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.4, ease: "easeOut" }}
-        className="hidden md:flex absolute bottom-6 sm:bottom-12 md:bottom-20 right-4 sm:right-6 md:right-12 z-20 flex-col items-center gap-1.5 sm:gap-2 md:gap-4"
+        className="hidden md:flex absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-4"
       >
         {/* Label */}
         <span className="text-slate-400 text-xs sm:text-sm md:text-base tracking-[0.35em] uppercase font-medium">
