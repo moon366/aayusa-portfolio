@@ -45,7 +45,7 @@ const Skills = () => {
     <section id="skills" className="py-24 bg-gray-50 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-5xl font-black tracking-tighter text-gray-900">
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tighter text-gray-900">
             [ Skills ]
           </h2>
         </div>
@@ -56,7 +56,7 @@ const Skills = () => {
               key={cat.title}
               className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-8 md:gap-12"
             >
-              <h3 className="text-3xl font-extrabold text-gray-900 tracking-tight md:text-right md:pt-1">
+              <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight md:text-right md:pt-1">
                 {cat.title}
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-5">

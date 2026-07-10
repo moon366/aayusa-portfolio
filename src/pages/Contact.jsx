@@ -31,7 +31,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left — Heading + Info */}
             <div>
-              <h2 className="text-5xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-cyan-500 uppercase leading-none mb-6">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-cyan-500 uppercase leading-none mb-6">
                 Let's Work<br />Together
               </h2>
               <p className="text-gray-400 text-sm leading-relaxed mb-10 max-w-sm">

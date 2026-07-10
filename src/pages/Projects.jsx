@@ -8,7 +8,7 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-gray-50/30">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-black tracking-tighter text-gray-900 uppercase">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-gray-900 uppercase">
             [ Projects ]
           </h2>
         </div>
@@ -19,7 +19,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="bg-white rounded-xl border border-gray-200 shadow-sm p-10 text-center mb-7"
+          className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 sm:p-10 text-center mb-7"
         >
           <motion.div
             animate={{ rotate: [0, 8, -8, 0], scale: [1, 1.05, 1] }}

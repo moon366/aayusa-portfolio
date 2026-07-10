@@ -72,7 +72,7 @@ const MusicPlayer = () => {
   return (
     <>
       {/* Floating Action Button */}
-      <div className="fixed bottom-8 left-8 z-50">
+      <div className="fixed bottom-5 left-5 md:bottom-8 md:left-8 z-50">
         <motion.button
           onClick={handleButtonClick}
           whileHover={{ scale: 1.1 }}

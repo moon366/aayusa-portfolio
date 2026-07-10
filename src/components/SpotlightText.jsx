@@ -92,7 +92,7 @@ const SpotlightText = ({ children, className = "" }) => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative cursor-none select-none ${className}`}
+      className={`relative md:cursor-none select-none ${className}`}
       style={{
         "--x": "0px",
         "--y": "0px",

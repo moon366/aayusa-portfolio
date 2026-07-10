@@ -73,133 +73,179 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, -18, 0], opacity: [0.12, 0.2, 0.12] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-[8%] w-72 h-72 rounded-full bg-cyan-500 blur-[120px] pointer-events-none"
+        className="hidden md:block absolute top-1/4 left-[8%] w-40 md:w-72 h-40 md:h-72 rounded-full bg-cyan-500 blur-[80px] md:blur-[120px] pointer-events-none"
       />
       <motion.div
         animate={{ y: [0, 14, 0], opacity: [0.07, 0.14, 0.07] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-1/4 right-[6%] w-64 h-64 rounded-full bg-slate-400 blur-[100px] pointer-events-none"
+        transition={{
+          duration: 9,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
+        className="hidden md:block absolute bottom-1/4 right-[6%] w-40 md:w-64 h-40 md:h-64 rounded-full bg-slate-400 blur-[80px] md:blur-[100px] pointer-events-none"
       />
 
       {/* ── Main content ── */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center min-h-screen py-28">
-
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-16 items-center pt-24 sm:pt-32 md:pt-40 pb-20 sm:pb-28 md:min-h-screen md:py-0">
         {/* LEFT — Text column */}
         <motion.div
           variants={stagger}
           initial="hidden"
           animate="show"
-          className="flex flex-col justify-center order-2 md:order-1"
+          className="flex flex-col justify-between order-2 md:order-1 h-auto md:min-h-[500px]"
         >
           {/* Role badge */}
-          <motion.div variants={fadeUp} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-xs tracking-[0.25em] uppercase font-medium">
+          <motion.div variants={fadeUp} className="mb-3 sm:mb-4 md:mb-6">
+            <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
               FullStack Developer
             </span>
           </motion.div>
 
           {/* Name */}
-          <motion.div variants={fadeUp} className="mb-4 overflow-hidden">
+          <motion.div
+            variants={fadeUp}
+            className="mb-3 sm:mb-4 md:mb-6 overflow-hidden"
+          >
             <h1
               className="leading-[1.05] text-white"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              <span className="flex items-center gap-3 text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br from-white via-slate-200 to-slate-500 bg-clip-text text-transparent">
+              <span className="flex items-center gap-2 sm:gap-3 text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-br from-white via-slate-200 to-slate-500 bg-clip-text text-transparent">
                 Aayusa
-
               </span>
-              <span className="block text-5xl md:text-6xl lg:text-7xl font-bold italic bg-gradient-to-r from-cyan-300 via-cyan-200 to-white bg-clip-text text-transparent mt-1">
+              <span className="block text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold italic bg-gradient-to-r from-cyan-300 via-cyan-200 to-white bg-clip-text text-transparent mt-1">
                 Nyaupane
               </span>
             </h1>
           </motion.div>
 
           {/* Divider */}
-          <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
-            <div className="h-px w-10 bg-cyan-500/60" />
+          <motion.div
+            variants={fadeUp}
+            className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 md:mb-6"
+          >
+            <div className="h-px w-8 sm:w-10 bg-cyan-500/60" />
             <div className="h-px flex-1 bg-slate-700/60" />
           </motion.div>
 
           {/* Tagline */}
           <motion.p
             variants={fadeUp}
-            className="text-slate-400 text-base md:text-lg leading-relaxed max-w-md mb-10 italic"
+            className="text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-md mb-4 sm:mb-6 md:mb-10 italic"
           >
             "Transforming ideas into interactive, responsive, and visually
             appealing web applications."
           </motion.p>
 
-          {/* CTAs */}
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mb-8">
-            <motion.a
-              href="#projects"
-              whileHover={{ scale: 1.03, boxShadow: "0 0 28px rgba(34,211,238,0.25)" }}
-              whileTap={{ scale: 0.97 }}
-              className="px-7 py-3 rounded-full bg-cyan-500 text-slate-900 font-semibold text-sm tracking-wide transition-colors duration-200 hover:bg-cyan-400"
-            >
-              View Projects
-            </motion.a>
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="px-7 py-3 rounded-full border border-slate-600 text-slate-300 font-medium text-sm tracking-wide hover:border-cyan-500/50 hover:text-white transition-colors duration-200"
-            >
-              Get in Touch
-            </motion.a>
-          </motion.div>
+          {/* Spacer - pushes CTA and social to bottom */}
+          <div className="flex-1" />
 
-          {/* Social Links */}
-          <motion.div variants={fadeUp} className="flex items-center gap-3">
-            <span className="text-slate-600 text-xs tracking-widest uppercase mr-1">Find me on</span>
-            <div className="h-px w-6 bg-slate-700" />
-            <div className="flex items-center gap-2">
-              {socialLinks.map(({ icon: Icon, href, label, color }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.15, y: -2 }}
-                  whileTap={{ scale: 0.92 }}
-                  className={`w-10 h-10 rounded-full border border-slate-700/70 bg-slate-800/60 flex items-center justify-center text-slate-500 transition-all duration-200 ${color}`}
-                >
-                  <Icon size={17} strokeWidth={1.7} />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+          {/* CTAs and Social Links Section */}
+          <div>
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-wrap gap-3 sm:gap-4 mb-4 sm:mb-6 md:mb-8"
+            >
+              <motion.a
+                href="#projects"
+                whileHover={{
+                  scale: 1.03,
+                  boxShadow: "0 0 28px rgba(34,211,238,0.25)",
+                }}
+                whileTap={{ scale: 0.97 }}
+                className="px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-cyan-500 text-slate-900 font-semibold text-xs sm:text-sm tracking-wide transition-colors duration-200 hover:bg-cyan-400"
+              >
+                View Projects
+              </motion.a>
+              <motion.a
+                href="#contact"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="px-5 sm:px-7 py-2.5 sm:py-3 rounded-full border border-slate-600 text-slate-300 font-medium text-xs sm:text-sm tracking-wide hover:border-cyan-500/50 hover:text-white transition-colors duration-200"
+              >
+                Get in Touch
+              </motion.a>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3"
+            >
+              <span className="text-slate-600 text-[10px] sm:text-xs tracking-widest uppercase">
+                Find me on
+              </span>
+              <div className="h-px w-6 bg-slate-700 hidden sm:block" />
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                {socialLinks.map(({ icon: Icon, href, label, color }) => (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.15, y: -2 }}
+                    whileTap={{ scale: 0.92 }}
+                    className={`w-8 sm:w-10 h-8 sm:h-10 rounded-full border border-slate-700/70 bg-slate-800/60 flex items-center justify-center text-slate-500 transition-all duration-200 ${color}`}
+                  >
+                    <Icon size={15} strokeWidth={1.7} />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Scroll Hint — mobile: in-flow below social links */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.4, ease: "easeOut" }}
+              className="flex md:hidden items-center gap-3 mt-8 pt-5 border-t border-slate-700/30"
+            >
+              <span className="text-slate-500 text-[10px] tracking-[0.3em] uppercase font-medium">
+                Scroll
+              </span>
+              <div className="h-px flex-1 bg-slate-700/40" />
+              <div className="w-5 h-8 rounded-full border border-cyan-500/50 flex justify-center items-start pt-1.5">
+                <motion.div
+                  animate={{ y: [0, 10, 0], opacity: [1, 0, 1] }}
+                  transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-1 h-2 rounded-full bg-cyan-400"
+                />
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
-
-        {/* RIGHT — Image column */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           className="flex justify-center md:justify-end items-center order-1 md:order-2"
         >
-          <div className="relative w-72 h-72 md:w-[22rem] md:h-[22rem] lg:w-[26rem] lg:h-[26rem]">
+          <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-[22rem] md:h-[22rem] lg:w-[26rem] lg:h-[26rem]">
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -inset-4 rounded-full border border-dashed border-cyan-500/15"
+              className="absolute -inset-3 sm:-inset-4 rounded-full border border-dashed border-cyan-500/15"
             />
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="absolute -inset-8 rounded-full border border-dotted border-slate-600/20"
+              className="absolute -inset-5 sm:-inset-8 rounded-full border border-dotted border-slate-600/20"
             />
             <motion.div
-              animate={{ borderRadius: seamlessMorph, opacity: [0.18, 0.28, 0.18] }}
+              animate={{
+                borderRadius: seamlessMorph,
+                opacity: [0.18, 0.28, 0.18],
+              }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 bg-cyan-500 blur-[80px]"
+              className="absolute inset-0 bg-cyan-500 blur-[60px] sm:blur-[80px]"
             />
-            <div className="absolute -top-3 -right-3 z-20 px-2.5 py-1 rounded-md bg-slate-800 border border-cyan-500/30 text-cyan-400 text-[10px] font-mono tracking-wider shadow-lg">
+            <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 z-20 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md bg-slate-800 border border-cyan-500/30 text-cyan-400 text-[8px] sm:text-[10px] font-mono tracking-wider shadow-lg">
               &lt;dev /&gt;
             </div>
-            <div className="absolute -bottom-3 -left-3 z-20 px-2.5 py-1 rounded-md bg-slate-800 border border-slate-600/50 text-slate-400 text-[10px] font-mono tracking-wider shadow-lg">
+            <div className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 z-20 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md bg-slate-800 border border-slate-600/50 text-slate-400 text-[8px] sm:text-[10px] font-mono tracking-wider shadow-lg">
               UI · UX
             </div>
             <motion.div
@@ -208,7 +254,11 @@ const Hero = () => {
               transition={{
                 opacity: { duration: 1 },
                 scale: { duration: 1 },
-                borderRadius: { duration: 10, repeat: Infinity, ease: "easeInOut" },
+                borderRadius: {
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                },
               }}
               className="relative w-full h-full overflow-hidden border border-cyan-400/20 shadow-[0_0_60px_-10px_rgba(34,211,238,0.25),0_0_120px_-30px_rgba(34,211,238,0.12)] bg-slate-800"
             >
@@ -223,35 +273,40 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* ── Scroll Hint — absolute bottom center, prominent ── */}
+      {/* ── Scroll Hint — absolute bottom right ── */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.4, ease: "easeOut" }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4"
+        className="hidden md:flex absolute bottom-6 sm:bottom-12 md:bottom-20 right-4 sm:right-6 md:right-12 z-20 flex-col items-center gap-1.5 sm:gap-2 md:gap-4"
       >
         {/* Label */}
-        <span className="text-slate-400 text-sm md:text-base tracking-[0.35em] uppercase font-medium">
+        <span className="text-slate-400 text-xs sm:text-sm md:text-base tracking-[0.35em] uppercase font-medium">
           Scroll
         </span>
 
         {/* Mouse outline */}
-        <div className="w-8 h-14 rounded-full border-2 border-cyan-500/50 flex justify-center items-start pt-2.5">
+        <div className="w-6 sm:w-8 h-10 sm:h-14 rounded-full border-2 border-cyan-500/50 flex justify-center items-start pt-1.5 sm:pt-2.5">
           <motion.div
             animate={{ y: [0, 14, 0], opacity: [1, 0, 1] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1.5 h-3 rounded-full bg-cyan-400"
+            className="w-1 sm:w-1.5 h-2 sm:h-3 rounded-full bg-cyan-400"
           />
         </div>
 
         {/* Staggered chevrons */}
-        <div className="flex flex-col items-center gap-1 -mt-1">
+        <div className="flex flex-col items-center gap-0.5 sm:gap-1 -mt-0.5 sm:-mt-1">
           {[0, 0.18, 0.36].map((delay, i) => (
             <motion.div
               key={i}
               animate={{ y: [0, 6, 0], opacity: [0.25, 1, 0.25] }}
-              transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut", delay }}
-              style={{ width: `${20 - i * 4}px`, height: `${20 - i * 4}px` }}
+              transition={{
+                duration: 1.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay,
+              }}
+              style={{ width: `${16 - i * 3}px`, height: `${16 - i * 3}px` }}
               className="border-r-2 border-b-2 border-cyan-400/80 rotate-45"
             />
           ))}
