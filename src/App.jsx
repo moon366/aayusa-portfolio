@@ -1,26 +1,31 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import Button from "./components/Button";
 import ScrollToTop from "./components/ScrollToTop";
 import MusicPlayer from "./components/MusicPlayer";
 
 function App() {
+  const [showAnkitamiss, setShowAnkitamiss] = useState(false);
+
+  useEffect(() => {
+    const checkHash = () => {
+      setShowAnkitamiss(window.location.hash === "#ankitamiss");
+    };
+
+    checkHash();
+    window.addEventListener("hashchange", checkHash);
+    return () => window.removeEventListener("hashchange", checkHash);
+  }, []);
+
+  if (showAnkitamiss) {
+    return <Button />;
+  }
+
   return (
     <div className="bg-white text-gray-900 antialiased">
       <ScrollToTop />
-      <Routes>
-        <Route path="/ankitamiss" element={<Button />} />
-        <Route
-          path="*"
-          element={
-            <>
-              <MusicPlayer />
-              <Home />
-            </>
-          }
-        />
-      </Routes>
+      <MusicPlayer />
+      <Home />
     </div>
   );
 }
