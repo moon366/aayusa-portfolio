@@ -1,15 +1,26 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Button from "./components/Button";
 import ScrollToTop from "./components/ScrollToTop";
-import Navbar from "./components/Navbar";
 import MusicPlayer from "./components/MusicPlayer";
 
 function App() {
   return (
     <div className="bg-white text-gray-900 antialiased">
       <ScrollToTop />
-      <MusicPlayer />
-      <Home />
+      <Routes>
+        <Route path="/ankitamiss" element={<Button />} />
+        <Route
+          path="*"
+          element={
+            <>
+              <MusicPlayer />
+              <Home />
+            </>
+          }
+        />
+      </Routes>
     </div>
   );
 }
