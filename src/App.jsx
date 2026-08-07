@@ -6,9 +6,8 @@ import PasswordGate from "./components/PasswordGate";
 
 const SUNFLOWER_URL = "https://aayusasunflower.vercel.app/#/gallery";
 
-function App() {
+const SecretRouteRedirect = () => {
   const [isSecretRoute, setIsSecretRoute] = useState(false);
-  const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
     const checkHash = () => {
@@ -24,21 +23,24 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (unlocked) {
+    if (isSecretRoute) {
       window.location.replace(SUNFLOWER_URL);
     }
-  }, [unlocked]);
+  }, [isSecretRoute]);
 
-  if (isSecretRoute && !unlocked) {
-    return <PasswordGate onUnlock={() => setUnlocked(true)} />;
-  }
+  return null;
+};
 
+function App() {
   return (
-    <div className="bg-white text-gray-900 antialiased">
-      <ScrollToTop />
-      <MusicPlayer />
-      <Home />
-    </div>
+    <PasswordGate>
+      <SecretRouteRedirect />
+      <div className="bg-white text-gray-900 antialiased">
+        <ScrollToTop />
+        <MusicPlayer />
+        <Home />
+      </div>
+    </PasswordGate>
   );
 }
 
