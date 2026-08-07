@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "tailwindcss";
 
 const CORRECT_PASSWORD = "20820804";
 const STORAGE_KEY = "aayusa_auth";
