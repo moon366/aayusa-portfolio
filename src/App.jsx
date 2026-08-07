@@ -3,17 +3,21 @@ import Home from "./pages/Home";
 import ScrollToTop from "./components/ScrollToTop";
 import MusicPlayer from "./components/MusicPlayer";
 import DivBox from "./components/DivBox";
+import Button from "./components/Button";
 
 const SUNFLOWER_URL = "https://aayusasunflower.vercel.app/#/gallery";
 
 function App() {
   const [isSecretRoute, setIsSecretRoute] = useState(false);
+  const [showGate, setShowGate] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
     const checkHash = () => {
       const hash = window.location.hash;
-      setIsSecretRoute(hash === "#ankitamiss" || hash === "#/ankitamiss");
+      const secret = hash === "#ankitamiss" || hash === "#/ankitamiss";
+      setIsSecretRoute(secret);
+      if (!secret) setShowGate(false);
     };
 
     checkHash();
@@ -27,8 +31,11 @@ function App() {
     }
   }, [unlocked]);
 
-  if (isSecretRoute && !unlocked) {
-    return <DivBox onUnlock={() => setUnlocked(true)} />;
+  if (isSecretRoute) {
+    if (showGate) {
+      return <DivBox onUnlock={() => setUnlocked(true)} />;
+    }
+    return <Button onExplore={() => setShowGate(true)} />;
   }
 
   return (

@@ -37,7 +37,7 @@ const RabbitIcon = ({ className }) => (
   </svg>
 );
 
-const Button = () => {
+const Button = ({ onExplore }) => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(34,211,238,0.08),transparent)]" />
@@ -61,16 +61,14 @@ const Button = () => {
           Something beautiful is waiting for you...
         </p>
 
-        <motion.a
-          href="https://aayusasunflower.vercel.app/#/gallery"
-          target="_blank"
-          rel="noopener noreferrer"
+        <motion.button
+          onClick={onExplore}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="inline-block px-10 py-4 bg-cyan-500 text-slate-900 font-semibold text-lg rounded-full shadow-lg hover:bg-cyan-400 transition-all duration-300 cursor-pointer"
         >
           Explore the Garden with Flowers
-        </motion.a>
+        </motion.button>
       </motion.div>
     </div>
   );
