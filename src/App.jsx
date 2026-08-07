@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import Home from "./pages/Home";
-import Button from "./components/Button";
 import ScrollToTop from "./components/ScrollToTop";
 import MusicPlayer from "./components/MusicPlayer";
+
+const SUNFLOWER_URL = "https://aayusasunflower.vercel.app/#/gallery";
 
 function App() {
   const [showAnkitamiss, setShowAnkitamiss] = useState(false);
 
   useEffect(() => {
     const checkHash = () => {
-      setShowAnkitamiss(window.location.hash === "#ankitamiss");
+      const hash = window.location.hash;
+      if (hash === "#ankitamiss" || hash === "#/ankitamiss") {
+        window.location.replace(SUNFLOWER_URL);
+        setShowAnkitamiss(true);
+      }
     };
 
     checkHash();
@@ -18,7 +23,7 @@ function App() {
   }, []);
 
   if (showAnkitamiss) {
-    return <Button />;
+    return null;
   }
 
   return (
