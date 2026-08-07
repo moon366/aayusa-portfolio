@@ -6,15 +6,14 @@ import DivBox from "./components/DivBox";
 
 const SUNFLOWER_URL = "https://aayusasunflower.vercel.app/#/gallery";
 
-const SecretRouteRedirect = () => {
+function App() {
   const [isSecretRoute, setIsSecretRoute] = useState(false);
+  const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
     const checkHash = () => {
       const hash = window.location.hash;
-      if (hash === "#ankitamiss" || hash === "#/ankitamiss") {
-        setIsSecretRoute(true);
-      }
+      setIsSecretRoute(hash === "#ankitamiss" || hash === "#/ankitamiss");
     };
 
     checkHash();
@@ -23,24 +22,21 @@ const SecretRouteRedirect = () => {
   }, []);
 
   useEffect(() => {
-    if (isSecretRoute) {
+    if (unlocked) {
       window.location.replace(SUNFLOWER_URL);
     }
-  }, [isSecretRoute]);
+  }, [unlocked]);
 
-  return null;
-};
+  if (isSecretRoute && !unlocked) {
+    return <DivBox onUnlock={() => setUnlocked(true)} />;
+  }
 
-function App() {
   return (
-    <DivBox>
-      <SecretRouteRedirect />
-      <div className="bg-white text-gray-900 antialiased">
-        <ScrollToTop />
-        <MusicPlayer />
-        <Home />
-      </div>
-    </DivBox>
+    <div className="bg-white text-gray-900 antialiased">
+      <ScrollToTop />
+      <MusicPlayer />
+      <Home />
+    </div>
   );
 }
 
