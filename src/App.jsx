@@ -2,18 +2,19 @@ import React, { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import ScrollToTop from "./components/ScrollToTop";
 import MusicPlayer from "./components/MusicPlayer";
+import PasswordGate from "./components/PasswordGate";
 
 const SUNFLOWER_URL = "https://aayusasunflower.vercel.app/#/gallery";
 
 function App() {
-  const [showAnkitamiss, setShowAnkitamiss] = useState(false);
+  const [isSecretRoute, setIsSecretRoute] = useState(false);
+  const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
     const checkHash = () => {
       const hash = window.location.hash;
       if (hash === "#ankitamiss" || hash === "#/ankitamiss") {
-        window.location.replace(SUNFLOWER_URL);
-        setShowAnkitamiss(true);
+        setIsSecretRoute(true);
       }
     };
 
@@ -22,8 +23,14 @@ function App() {
     return () => window.removeEventListener("hashchange", checkHash);
   }, []);
 
-  if (showAnkitamiss) {
-    return null;
+  useEffect(() => {
+    if (unlocked) {
+      window.location.replace(SUNFLOWER_URL);
+    }
+  }, [unlocked]);
+
+  if (isSecretRoute && !unlocked) {
+    return <PasswordGate onUnlock={() => setUnlocked(true)} />;
   }
 
   return (
