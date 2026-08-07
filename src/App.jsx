@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import ScrollToTop from "./components/ScrollToTop";
 import MusicPlayer from "./components/MusicPlayer";
-import PasswordGate from "./components/PasswordGate";
+import DivBox from "./components/DivBox";
 
 const SUNFLOWER_URL = "https://aayusasunflower.vercel.app/#/gallery";
 
@@ -33,14 +33,14 @@ const SecretRouteRedirect = () => {
 
 function App() {
   return (
-    <PasswordGate>
+    <DivBox>
       <SecretRouteRedirect />
       <div className="bg-white text-gray-900 antialiased">
         <ScrollToTop />
         <MusicPlayer />
         <Home />
       </div>
-    </PasswordGate>
+    </DivBox>
   );
 }
 
